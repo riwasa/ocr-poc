@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "addressPrefixes": {
+      "value": [
+        "10.0.0.0/25"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "app-service",
+          "properties": {
+            "addressPrefix": "10.0.0.0/28"
+          }
+        },
+        {
+          "name": "private-endpoints",
+          "properties": {
+            "addressPrefix": "10.0.0.16/28",
+            "privateEndpointNetworkPolicies": "Disabled",
+            "privateLinkServiceNetworkPolicies": "Enabled"
+          }
+        }
+      ]
+    }
+  }
+}

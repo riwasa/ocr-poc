@@ -1,2 +1,3 @@
 # ocr-poc
-Proof-of-concept for OCR.
+
+This respository contains infrastructure-as-code templates and application code for a proof-of-concept for OCR.
