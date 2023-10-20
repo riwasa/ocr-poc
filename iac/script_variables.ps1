@@ -41,6 +41,9 @@ $documentIntelligencePrivateEndpointName = "ll-ocr-poc-docint-pe"
 $applicationInsightsComponentName = "ll-ocr-poc-appi"
 $logAnalyticsWorkspaceName = "ll-ocr-poc-law"
 
+# Storage.
+$intakeStorageAccountName = "llocrpocintakest"
+
 # Virtual Network.
 $privateEndpointSubnetName = "private-endpoints"
 $virtualNetworkName = "ll-ocr-poc-vnet"

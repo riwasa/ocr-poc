@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "accessTier": {
+      "value": "Hot"
+    },
+    "allowBlobPublicAccess": {
+      "value": false
+    },
+    "allowCrossTenantReplication": {
+      "value": false
+    },
+    "allowSharedKeyAccess": {
+      "value": true
+    },
+    "containers": {
+      "value": [
+        {
+          "name": "intake",
+          "publicAccess": "None"
+        }
+      ]
+    },
+    "defaultToOAuthAuthentication": {
+      "value": false
+    },
+    "deleteRetentionPolicy": {
+      "value": {
+        "days": 7,
+        "enabled": true        
+      }
+    },
+    "dnsEndpointType": {
+      "value": "Standard"
+    },
+    "kind": {
+      "value": "StorageV2"
+    },
+    "minimumTlsVersion": {
+      "value": "TLS1_2"
+    }, 
+    "publicNetworkAccess": {
+      "value": "Enabled"
+    },
+    "skuName": {
+      "value": "Standard_LRS"
+    }
+  }
+}

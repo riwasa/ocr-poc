@@ -20,3 +20,4 @@ Run scripts in the following order, to account for any dependencies between reso
 2. Run monitor\monitor.ps1 to create a Log Analytics Workspace and an Application Insights Component.
 3. Run document_intelligence\document_intelligence.ps1 to create a Document Intelligence Cognitive Services Account.
 4. Run cosmos_db\cosmos_db.ps1 to create a Cosmos DB Database Account, Database, and Containers.
+5. Run storage\storage.ps1 to create a Storage Account for form intake.
