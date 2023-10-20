@@ -47,6 +47,9 @@ param deleteRetentionPolicy object = {}
 ])
 param dnsEndpointType string
 
+@description('The name of the Document Intelligence Cognitive Services Account.')
+param documentIntelligenceAccountName string
+
 @description('The kind of the Storage Account.')
 @allowed([
   'BlobStorage'
@@ -91,6 +94,11 @@ param skuName string
 @description('The name of the Storage Account.')
 param storageAccountName string
 
+// Get the Document Intelligence Cognitive Services Account.
+resource documentIntelligence 'Microsoft.CognitiveServices/accounts@2023-05-01' existing = {
+  name: documentIntelligenceAccountName
+}
+
 // Create a Storage Account.
 resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   name: storageAccountName
@@ -105,8 +113,14 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
     dnsEndpointType: dnsEndpointType
     minimumTlsVersion: minimumTlsVersion
     networkAcls: {
-      bypass: 'AzureServices'
-      defaultAction: 'Allow'
+      bypass: 'None'
+      defaultAction: 'Deny'
+      resourceAccessRules: [
+        {
+          tenantId: tenant().tenantId
+          resourceId: documentIntelligence.id
+        }
+      ]
     }
     publicNetworkAccess: publicNetworkAccess
     supportsHttpsTrafficOnly: true

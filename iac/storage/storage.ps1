@@ -25,5 +25,6 @@ az deployment group create `
   --resource-group "$resourceGroupName" `
   --template-file "storage.bicep" `
   --parameters "storage.parameters.json" `
-  --parameters location="$location" `
+  --parameters documentIntelligenceAccountName="$documentIntelligenceAccountName" `
+               location="$location" `
                storageAccountName="$intakeStorageAccountName"
