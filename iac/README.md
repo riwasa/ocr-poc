@@ -1,4 +1,4 @@
-# Infrastructure-as-code files
+# Infrastructure-as-code Files
 
 This folder contains Bicep templates and PowerShell scripts to create Azure resources.
 
@@ -12,10 +12,11 @@ The script_variables.ps1 file should be updated with the following:
 - Change $resourceGroupName to the name of the Resource Group where resources should be deployed.
 - Change resource names to reflect the company naming convention.
 
-## Execution
+## Creating Resources
 
 Run scripts in the following order, to account for any dependencies between resources.
 
 1. Run virtual_network\virtual_network.ps1 to create a Virtual Network for Function VNet integration and private endpoints.
-2. Run document_intelligence\document_intelligence.ps1 to create a Document Intelligence Cognitive Services Account.
-3. Run cosmos_db\cosmos_db.ps1 to create a Cosmos DB Database Account and Database.
+2. Run monitor\monitor.ps1 to create a Log Analytics Workspace and an Application Insights Component.
+3. Run document_intelligence\document_intelligence.ps1 to create a Document Intelligence Cognitive Services Account.
+4. Run cosmos_db\cosmos_db.ps1 to create a Cosmos DB Database Account, Database, and Containers.

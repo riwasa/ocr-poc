@@ -37,6 +37,10 @@ $cosmosDbPrivateEndpointName = "ll-ocr-poc-cosmos-pe"
 $documentIntelligenceAccountName = "ll-ocr-poc-docint"
 $documentIntelligencePrivateEndpointName = "ll-ocr-poc-docint-pe"
 
+# Monitor.
+$applicationInsightsComponentName = "ll-ocr-poc-appi"
+$logAnalyticsWorkspaceName = "ll-ocr-poc-law"
+
 # Virtual Network.
 $privateEndpointSubnetName = "private-endpoints"
 $virtualNetworkName = "ll-ocr-poc-vnet"
