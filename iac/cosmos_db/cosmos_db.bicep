@@ -48,6 +48,9 @@ resource databaseAccount 'Microsoft.DocumentDB/databaseAccounts@2023-09-15' = {
   kind: 'GlobalDocumentDB'
   properties: {
     backupPolicy: {
+      continuousModeProperties: {
+        tier: 'Continuous7Days'
+      }
       type: 'Continuous'
     }
     capabilities: [
