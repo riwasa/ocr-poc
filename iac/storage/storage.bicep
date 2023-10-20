@@ -113,7 +113,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
     dnsEndpointType: dnsEndpointType
     minimumTlsVersion: minimumTlsVersion
     networkAcls: {
-      bypass: 'None'
+      bypass: 'AzureServices'
       defaultAction: 'Deny'
       resourceAccessRules: [
         {
