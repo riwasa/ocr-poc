@@ -22,3 +22,4 @@ Run scripts in the following order, to account for any dependencies between reso
 4. Run cosmos_db\cosmos_db.ps1 to create a Cosmos DB Database Account, Database, and Containers.
 5. Run storage\storage.ps1 to create a Storage Account for form intake.
 6. Run function\function.ps1 to create a Function App.
+7. Run event_grid\event_grid.ps1 to create an Event Grid System Topic.

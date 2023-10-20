@@ -37,6 +37,9 @@ $cosmosDbPrivateEndpointName = "ll-ocr-poc-cosmos-pe"
 $documentIntelligenceAccountName = "ll-ocr-poc-docint"
 $documentIntelligencePrivateEndpointName = "ll-ocr-poc-docint-pe"
 
+# Event Grid.
+$eventGridSystemTopicName = "ll-ocr-poc-intake-storage-egst"
+
 # Function.
 $functionAppName = "ll-ocr-poc-func"
 $functionAppServicePlanName = "ll-ocr-poc-func-asp"
