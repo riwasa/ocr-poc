@@ -37,6 +37,11 @@ $cosmosDbPrivateEndpointName = "ll-ocr-poc-cosmos-pe"
 $documentIntelligenceAccountName = "ll-ocr-poc-docint"
 $documentIntelligencePrivateEndpointName = "ll-ocr-poc-docint-pe"
 
+# Function.
+$functionAppName = "ll-ocr-poc-func"
+$functionAppServicePlanName = "ll-ocr-poc-func-asp"
+$functionAppStorageName = "llocrpocfuncst"
+
 # Monitor.
 $applicationInsightsComponentName = "ll-ocr-poc-appi"
 $logAnalyticsWorkspaceName = "ll-ocr-poc-law"
@@ -44,6 +49,8 @@ $logAnalyticsWorkspaceName = "ll-ocr-poc-law"
 # Storage.
 $intakeStorageAccountName = "llocrpocintakest"
 
-# Virtual Network.
+# Virtual Network. Do not change the subnet names without also changing them
+# in virtual_network\virtual_network.parameters.json.
+$appServiceSubnetName = "app-service"
 $privateEndpointSubnetName = "private-endpoints"
 $virtualNetworkName = "ll-ocr-poc-vnet"

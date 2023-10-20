@@ -12,8 +12,21 @@
         {
           "name": "app-service",
           "properties": {
-            "addressPrefix": "10.0.0.0/28"
-          }
+            "addressPrefix": "10.0.0.0/28",
+            "delegations": [
+              {
+                "name": "delegation",
+                "properties": {
+                  "serviceName": "Microsoft.Web/serverFarms"
+                }
+              }
+            ],
+            "serviceEndpoints": [
+              {
+                "service": "Microsoft.Storage"
+              }
+            ]
+          }          
         },
         {
           "name": "private-endpoints",

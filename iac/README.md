@@ -21,3 +21,4 @@ Run scripts in the following order, to account for any dependencies between reso
 3. Run document_intelligence\document_intelligence.ps1 to create a Document Intelligence Cognitive Services Account.
 4. Run cosmos_db\cosmos_db.ps1 to create a Cosmos DB Database Account, Database, and Containers.
 5. Run storage\storage.ps1 to create a Storage Account for form intake.
+6. Run function\function.ps1 to create a Function App.
