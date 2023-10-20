@@ -18,3 +18,4 @@ Run scripts in the following order, to account for any dependencies between reso
 
 1. Run virtual_network\virtual_network.ps1 to create a Virtual Network for Function VNet integration and private endpoints.
 2. Run document_intelligence\document_intelligence.ps1 to create a Document Intelligence Cognitive Services Account.
+3. Run cosmos_db\cosmos_db.ps1 to create a Cosmos DB Database Account and Database.

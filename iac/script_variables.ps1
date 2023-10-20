@@ -29,6 +29,10 @@ $resourceGroupName = "ll-ocr-poc-rg"
 # Resource values.
 # ***********************************************
 
+# Cosmos DB.
+$cosmosDbDatabaseAccountName = "ll-ocr-poc-cosmos"
+$cosmosDbPrivateEndpointName = "ll-ocr-poc-cosmos-pe"
+
 # Document Intelligence.
 $documentIntelligenceAccountName = "ll-ocr-poc-docint"
 $documentIntelligencePrivateEndpointName = "ll-ocr-poc-docint-pe"
