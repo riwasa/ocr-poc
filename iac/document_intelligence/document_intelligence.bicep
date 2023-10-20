@@ -98,7 +98,7 @@ resource vnetLink 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2020-06
   location: 'global'
   parent: privateDnsZone
   properties: {
-    registrationEnabled: true
+    registrationEnabled: false
     virtualNetwork: {
       id: resourceId('Microsoft.Network/virtualNetworks', vnetName)
     }
@@ -112,7 +112,7 @@ resource privateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneG
   properties: {
     privateDnsZoneConfigs: [
       {
-        name: 'privatelink-cognitiveservices'
+        name: 'privatelink-cognitiveservices-azure-com'
         properties: {
           privateDnsZoneId: privateDnsZone.id
         }
