@@ -26,6 +26,12 @@ param applicationInsightsName string
 @description('Indicates if session affinity cookies should be sent.')
 param clientAffinityEnabled bool
 
+@description('The name of the Cosmos DB Database Account.')
+param cosmosDbDatabaseAccountName string
+
+@description('The name of the Document Intelligence Cognitive Services Account.')
+param documentIntelligenceAccountName string
+
 @description('Indicates if FTPS is allowed.')
 @allowed([
   'AllAllowed'
@@ -93,6 +99,16 @@ resource applicationInsightsComponent 'Microsoft.Insights/components@2020-02-02'
   name: applicationInsightsName
 }
 
+// Get the Cosmos DB Database Account.
+resource cosmosDbDatabaseAccount 'Microsoft.DocumentDB/databaseAccounts@2023-09-15' existing = {
+  name: cosmosDbDatabaseAccountName
+}
+
+// Get the Document Intelligence Cognitive Services Account.
+resource documentIntelligence 'Microsoft.CognitiveServices/accounts@2023-05-01' existing = {
+  name: documentIntelligenceAccountName
+}
+
 // Get the subnet for VNet integration.
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2023-05-01' existing = {
   name: '${vnetName}/${subnetName}'
@@ -150,15 +166,31 @@ resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
         {
           name: 'AzureWebJobsStorage'
           value: 'DefaultEndpointsProtocol=https;AccountName=${functionAppStorageName};EndpointSuffix=${environment().suffixes.storage};AccountKey=${functionAppStorageAccount.listKeys().keys[0].value}'
-          }
-          {
-            name: 'FUNCTIONS_EXTENSION_VERSION'
-            value: '~4'
-          }
-          {
-            name: 'FUNCTIONS_WORKER_RUNTIME'
-            value: 'dotnet-isolated'
-          }
+        }
+        {
+          name: 'FUNCTIONS_EXTENSION_VERSION'
+          value: '~4'
+        }
+        {
+          name: 'FUNCTIONS_WORKER_RUNTIME'
+          value: 'dotnet-isolated'
+        }
+        {
+          name: 'CosmosDB'
+          value: cosmosDbDatabaseAccount.listConnectionStrings().connectionStrings[0].connectionString
+        }
+        {
+          name: 'DocumentIntelligenceEndpoint'
+          value: documentIntelligence.properties.endpoint
+        }
+        {
+          name: 'DocumentIntelligenceKey'
+          value: documentIntelligence.listKeys().key1
+        }
+        {
+          name: 'ModelType'
+          value: 'GeneralDocument'
+        }
       ]
       cors: {
         allowedOrigins: [

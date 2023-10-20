@@ -26,6 +26,8 @@ az deployment group create `
   --template-file "function.bicep" `
   --parameters "function.parameters.json" `
   --parameters applicationInsightsName="$applicationInsightsComponentName" `
+               cosmosDbDatabaseAccountName="$cosmosDbDatabaseAccountName" `
+               documentIntelligenceAccountName="$documentIntelligenceAccountName" `
                functionAppName="$functionAppName" `
                functionAppServicePlanName="$functionAppServicePlanName" `
                functionAppStorageName="$functionAppStorageName" `
